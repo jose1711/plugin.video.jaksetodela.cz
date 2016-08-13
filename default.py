@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-#/*
+# /*
 # *      Copyright (C) 2013 Ivo Brhel
 # *
 # *
@@ -20,23 +20,26 @@
 # *
 # */
 import os
-sys.path.append( os.path.join ( os.path.dirname(__file__),'resources','lib') )
-
-import re
+import sys
 import xbmcaddon
-import util,xbmcprovider,xbmcutil
+import util
+import xbmcprovider
+import xbmcutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), 'resources', 'lib'))
 import jaksetodela
 
-__scriptid__   = 'plugin.video.jaksetodela.cz'
-__scriptname__ = 'jaksetodela.cz'
-__addon__      = xbmcaddon.Addon(id=__scriptid__)
-__language__   = __addon__.getLocalizedString
 
-settings = {'downloads':__addon__.getSetting('downloads'),'quality':__addon__.getSetting('quality')}
+
+__scriptid__ = 'plugin.video.jaksetodela.cz'
+__scriptname__ = 'jaksetodela.cz'
+__addon__ = xbmcaddon.Addon(id=__scriptid__)
+__language__ = __addon__.getLocalizedString
+
+settings = {'downloads': __addon__.getSetting('downloads'), 'quality': __addon__.getSetting('quality')}
 
 params = util.params()
-if params=={}:
-	xbmcutil.init_usage_reporting( __scriptid__)
-xbmcprovider.XBMCMultiResolverContentProvider(jaksetodela.JaksetodelaContentProvider(),settings,__addon__).run(params)
-
-
+if params == {}:
+    xbmcutil.init_usage_reporting( __scriptid__)
+xbmcprovider.XBMCMultiResolverContentProvider(
+                   jaksetodela.JaksetodelaContentProvider(), settings, __addon__).run(params)
