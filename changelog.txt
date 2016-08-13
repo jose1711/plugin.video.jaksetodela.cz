@@ -1,3 +1,5 @@
+[B]1.0.4:[/B]
+Pridany sk preklad
 [B]1.0.3:[/B]
 Update po zmenach na webe
 [B]1.0.1:[/B]
